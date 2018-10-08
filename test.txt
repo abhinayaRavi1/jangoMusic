@@ -1,0 +1,23 @@
+#Changes to DB structure
+python manage.py makemigrations <filename> {models.py file here}
+python manage.py migrate
+
+#Get to the database
+python manage.py shell
+from music.model import Album,Song
+
+#Two ways of inserting rows to databse
+1) a = Album(artist="",album_title="")
+2) a = Album()
+   a.artist=""
+   a.album_title=""
+
+After this we give a.save()
+
+#To display all the tuples
+Album.objects.all()
+Album.objects.filter(id=1)
+#Find strings
+Album.objects.filter(artist__startswith='Link')
+
+
