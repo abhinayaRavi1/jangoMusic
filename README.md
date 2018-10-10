@@ -1,2 +1,1 @@
-website
-Django sample for a music website
+A simple Django project for a music website
