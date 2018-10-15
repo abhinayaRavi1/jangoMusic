@@ -1,12 +1,14 @@
 body {
     background: white url("images/background.jpg");
-    color: white;
+    color: black;
 }
 
 .navbar{
         border-radius:0;
+        color:black;
 }
 
 .navbar-brand{
     font-family: 'Satisfy', cursive;
+    color:red;
 }
