@@ -5,15 +5,18 @@ app_name= 'music'
 
 urlpatterns = [
         # /music/
-        path('', views.IndexView.as_view(), name='index'),
-        #User registration form
-        re_path(r'^register/$',views.UserFormView.as_view(),name='register'),
+        path('', views.index, name='index'),
+        re_path(r'^register/$',views.register,name='register'), #User registration form
+        re_path(r'^login_user/$',views.login_user,name='login_user'),
+        re_path(r'^logout_user/$',views.logout_user,name='logout_user'),
         # /music/id_no/
-        re_path(r'^(?P<pk>[0-9]+)/$', views.DetailView.as_view(), name='detail'),
+        re_path(r'^(?P<album_id>[0-9]+)/$', views.detail, name='detail'),
+        re_path(r'^(?P<song_id>[0-9]+)/favorite/$', views.favorite, name='favorite'),
+        re_path(r'^songs/(?P<filter_by>[a-zA_Z]+)/$', views.songs, name='songs'),
         # /music/album/add/
-        re_path(r'album/add/$',views.AlbumCreate.as_view(),name='album-add'),
-        # For updating a given album /music/album/id of updated album
-        re_path(r'album/(?P<pk>[0-9]+)/$', views.AlbumUpdate.as_view(),name='album-update'),
-        #For deleting a album
-        re_path(r'album/(?P<pk>[0-9]+)/delete/$', views.AlbumDelete.as_view(),name='album-delete'),
+        re_path(r'^create_album/$', views.create_album, name='create_album'),
+        re_path(r'^(?P<album_id>[0-9]+)/create_song/$', views.create_song, name='create_song'),
+        re_path(r'^(?P<album_id>[0-9]+)/delete_song/(?P<song_id>[0-9]+)/$', views.delete_song, name='delete_song'),
+        re_path(r'^(?P<album_id>[0-9]+)/favorite_album/$', views.favorite_album, name='favorite_album'),
+        re_path(r'^(?P<album_id>[0-9]+)/delete_album/$', views.delete_album, name='delete_album'),
 ]

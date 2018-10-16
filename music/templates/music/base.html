@@ -6,7 +6,7 @@
     <title>{%block title %} Swara Box {% endblock %} </title>
     {% load staticfiles %}
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link href='https://fonts.googleapis.com/css?family=Satisy' rel='stylesheet' type='text/css'>
+    <!-- <link href='https://fonts.googleapis.com/css?family=Satisy' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" type="text/css" href="{% static 'music/style.css' %}"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -33,7 +33,7 @@
                 </a>
                 </li>
                 <li class="{% block songs_active%}{% endblock %}">
-                <a href="{% url 'music:songs' all %}">
+                <a href="{% url 'music:songs' 'all' %}">
                     <span class="glyphicon glyphicon-music" aria-hidden="true"></span>&nbsp;&nbsp;Songs
                 </a>
                 </li>
@@ -48,7 +48,7 @@
 
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="{% url 'music:album-add' %}">
+                    <a href="{% url 'music:create_album' %}">
                         <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add album
                     </a>
                 </li>
