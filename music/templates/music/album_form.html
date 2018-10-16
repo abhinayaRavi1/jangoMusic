@@ -9,7 +9,10 @@
         <div class=""col-sm-12 col-md-7">
             <div class="panel panel-default">
                 <div class="panel-body">
-
+                    <h3>Add a new Album</h3>
+                    {% if error_message %}
+                        <p><strong>{{ error_message }}</strong></p>
+                    {% endif %}
                     <form class="form-horizontal" action="" method="post" enctype="multipart/form-data">
                         {% csrf_token %}
                         {% include 'music/form-template.html'%}
@@ -22,6 +25,17 @@
                 </div>
             </div>
         </div>
+
+    <div class="col-sm-12 col-md-5">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <h3>What is Swara Box?</h3>
+                <p>An app which allows to upload and store all of your music on the cloud</p>
+                <h3>How to add music?</h3>
+                <p>Click on the 'Add Album' icon and enter the details</p>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 {% endblock %}
