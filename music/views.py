@@ -178,7 +178,7 @@ def register(request):
     context = {
         "form": form,
     }
-    return render(request, 'music/register.html', context)
+    return render(request, 'music/registration_form.html', context)
 
 def songs(request, filter_by):
     if not request.user.is_authenticated:

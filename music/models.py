@@ -1,11 +1,12 @@
 from django.db import models
 from django.contrib.auth.models import Permission,User
+from django.db.models import SET_DEFAULT
 from django.urls import reverse
 
 # Create your models here.
 class Album(models.Model):
     # artist is a column name in another database
-    user = models.ForeignKey(User,on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User,on_delete=models.SET(1))
     artist = models.CharField(max_length=250)
     album_title = models.CharField(max_length=500)
     genre = models.CharField(max_length=100)
